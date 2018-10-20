@@ -1,0 +1,111 @@
+	<div class="container">
+		<div class="row d-flex justify-content-center">
+		<div class="col-4" >
+				
+			<form  novalidate [formGroup]="user" (ngSubmit)="onSubmit(user)">
+				<mat-card [ngClass]="{'card': true}">
+				<mat-card-title  [ngClass]="{'title-style': true}">
+					Sign  Up
+				</mat-card-title>
+			 <!--  Seccion  datos  personales -->
+					<div  *ngIf="hiadens">
+							
+							 
+							<div class="col-12">
+							<mat-form-field  [ngClass]="{'input-style': true}"  >
+    							<input matInput  placeholder="Firts  Name"  
+										formControlName="firtsName">
+								
+  							</mat-form-field>
+								<div 	class="error"
+										*ngIf="user.get('firtsName').hasError('required') && user.get('firtsName').touched">
+										The  field   firts  name  is required
+								</div>
+							
+							</div>
+									<div class="col-12">
+									<mat-form-field  [ngClass]="{'input-style': true}"  >
+										<input matInput  placeholder="Last  Name"
+														formControlName="lastName">
+									</mat-form-field>
+									 	<div class="error" 
+										 	*ngIf="user.get('lastName').hasError('required')
+											 		&&  user.get('lastName').touched">
+											The  field  last name  is required
+										 </div>
+									</div>
+									<div class="col-12">
+									<mat-form-field  [ngClass]="{'input-style': true}"  >
+										<input matInput   placeholder="Cell  Phone"
+										 				formControlName="cellPhone">
+														
+									</mat-form-field>
+									 <div class="error">
+									  </div>
+
+									</div>
+									 <div class="col-6">
+									   <button type="submit" class="btn btn-primary" [disabled]="user.invalid" (click)="show()">Next</button>
+									 </div>
+						
+					
+					</div><!-- Fin secion  datos  personales -->
+					 <!-- Contraseña  y  usuario -->
+						<div  *ngIf="hiadens">
+							<mat-card-title  [ngClass]="{'title-style': true}">	
+							 	Sign  Up
+							 </mat-card-title>
+							<div class="col-12">
+							<mat-form-field  [ngClass]="{'input-style': true}"  >
+    							<input matInput  placeholder="Email"  
+										formControlName="email">
+								
+  							</mat-form-field>
+								<div 	class="error"
+										*ngIf="user.get('firtsName').hasError('required') && user.get('firtsName').touched">
+										The  field   firts  name  is required
+								</div>
+							
+							</div>
+									<div class="col-12">
+									<mat-form-field  [ngClass]="{'input-style': true}"  >
+										<input matInput  placeholder="Reapeat Email "
+														formControlName="reapeatEmail">
+									</mat-form-field>
+									 	<div class="error" 
+										 	*ngIf="user.get('lastName').hasError('required')
+											 		&&  user.get('lastName').touched">
+											The  field  last name  is required
+										 </div>
+									</div>
+									<div class="col-12">
+									<mat-form-field  [ngClass]="{'input-style': true}"  >
+										<input matInput   placeholder="Password   "
+										 				formControlName="Password">
+														
+									</mat-form-field>
+									 <div class="error">
+									  </div>
+
+									</div>
+									<div class="col-12">
+									<mat-form-field  [ngClass]="{'input-style': true}"  >
+										<input matInput  placeholder="Repeat Password"
+										 				formControlName="repeatPassword" >
+									</mat-form-field>
+									</div>
+									 <div class="col-6">
+									   <button type="submit" class="btn btn-primary" [disabled]="user.invalid" (click)="show()">Next</button>
+									 </div>
+						
+					
+					</div>
+
+					 <!-- FIn  contraseña  y  usuario -->
+					 </mat-card>
+						
+			</form>
+		</div>
+			
+		</div>
+	</div>
